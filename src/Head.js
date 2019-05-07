@@ -11,6 +11,7 @@ class Head extends React.Component{
           <ul className = "list">
             <li><a className = "listItem" href = "/TrueFalseQuiz">True-False Quiz</a></li>
             <li><a className = "listItem" href = "/FillInTheBlankQuiz">Fill in the Blank Quiz</a></li>
+            <li><a className = "listItem" href = "/PageThree">Page Three</a></li>
           </ul>
         </nav>
         <img className = "picture1" alt = "American Capital"

@@ -2,6 +2,7 @@ import React from 'react'
 import Head from './Head'
 import PageOne from './PageOne'
 import PageTwo from './PageTwo'
+import PageThree from './PageThree'
 
 import {BrowserRouter, Route} from 'react-router-dom'
 
@@ -13,6 +14,7 @@ class MyApp extends React.Component {
           <Head />
           <Route path = "/TrueFalseQuiz" component = {PageOne} />
           <Route path = "/FillInTheBlankQuiz" component = {PageTwo} />
+          <Route path = "/PageThree" component = {PageThree} />
         </div>
       </BrowserRouter>
     )

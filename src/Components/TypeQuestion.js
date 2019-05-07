@@ -4,7 +4,6 @@ class TypeQuestion extends React.Component{
   constructor(props) {
     super(props);
     this.state = {value: '', answered: null}
-
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.colorChange = this.colorChange.bind(this)
@@ -13,9 +12,8 @@ class TypeQuestion extends React.Component{
     this.setState({value: event.target.value});
   }
   handleSubmit(event) {
-    console.log('A name was submitted: ' + this.state.value);
     event.preventDefault();
-    if(this.state.value.toLowerCase().trim() === this.props.correct.toLowerCase().trim()){
+    if(this.state.value.toLowerCase().trim() === this.props.capital.toLowerCase().trim()){
       alert("Correct!")
       this.setState({answered: true})
     }
@@ -40,7 +38,6 @@ class TypeQuestion extends React.Component{
     return (
       <div>
         <p className = "country">What is the capital of {this.props.country}?</p>
-
         <form onSubmit={this.handleSubmit}>
           <label>
             <input type="text" value={this.state.value} onChange={this.handleChange} />

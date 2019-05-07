@@ -1,7 +1,7 @@
 import React from "react"
-import Question from './Question'
-import CapData from './CapData'
-import TypeQuestion from './TypeQuestion'
+import Question from './Components/Question'
+import CapData from './Components/CapData'
+import TypeQuestion from './Components/TypeQuestion'
 
 class ContinentButton extends React.Component{
 
@@ -44,12 +44,12 @@ class ContinentButton extends React.Component{
   }
 
   render(){
-    //put all this in that thing that renders only at start IDK if this actually works
     var filtered = this.selRandom(10);
     var gobble = []
     if(this.state.current != null){
       filtered = CapData.filter(caps => (
       caps.continent === this.state.current) )}
+
     if(this.props.page === "page1"){
        gobble = filtered.map(cap =>
           <Question key = {cap.country} country={cap.country} given={cap.given}
@@ -65,16 +65,18 @@ class ContinentButton extends React.Component{
       this.setState({current: null})
     }
     return(
+
       <div>
-        <button className = "contButton" onClick ={this.handleClick} name = "Europe">Europe</button>
+        <button className = "contButton" style = {{borderTop: "3px solid black"}} onClick ={this.handleClick} name = "Europe">Europe</button>
         <button className = "contButton" onClick ={this.handleClick} name = "Asia">Asia</button>
         <button className = "contButton" onClick ={this.handleClick} name = "Africa">Africa</button>
         <button className = "contButton" onClick ={this.handleClick} name = "North America">North America</button>
-        <br />
         <button className = "contButton" onClick ={this.handleClick} name = "South America">South America</button>
         <button className = "contButton" onClick ={this.handleClick} name = "Oceania">Oceania</button>
-        <button className = "contButton" onClick ={this.handleClickReset}>Reset</button>
+        <button className = "contButton" style = {{borderBottom: "3px solid black"}} onClick ={this.handleClickReset}>Reset</button>
+
         {gobble}
+
       </div>
     )
   }
